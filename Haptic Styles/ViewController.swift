@@ -22,67 +22,71 @@ class ViewController: UIViewController {
 
     func setupViews() {
 
+        var buttonConfig = UIButton.Configuration.filled()
+        buttonConfig.titleAlignment = .center
+        buttonConfig.cornerStyle = .medium
+        
         let button1 = UIButton(frame: .zero)
+        button1.configuration = buttonConfig
         button1.translatesAutoresizingMaskIntoConstraints = false
         button1.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button1.setTitle("Success", for: .normal)
-        button1.backgroundColor = UIColor.blue
         button1.tag = 1
         
         let button2 = UIButton(frame: .zero)
+        button2.configuration = buttonConfig
         button2.translatesAutoresizingMaskIntoConstraints = false
         button2.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button2.setTitle("Warning", for: .normal)
-        button2.backgroundColor = UIColor.blue
         button2.tag = 2
         
         let button3 = UIButton()
+        button3.configuration = buttonConfig
         button3.translatesAutoresizingMaskIntoConstraints = false
         button3.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button3.setTitle("Error", for: .normal)
-        button3.backgroundColor = UIColor.blue
         button3.tag = 3
 
         let button4 = UIButton()
+        button4.configuration = buttonConfig
         button4.translatesAutoresizingMaskIntoConstraints = false
         button4.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button4.setTitle("Light", for: .normal)
-        button4.backgroundColor = UIColor.blue
         button4.tag = 4
         
         let button5 = UIButton()
+        button5.configuration = buttonConfig
         button5.translatesAutoresizingMaskIntoConstraints = false
         button5.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button5.setTitle("Medium", for: .normal)
-        button5.backgroundColor = UIColor.blue
         button5.tag = 5
         
         let button6 = UIButton()
+        button6.configuration = buttonConfig
         button6.translatesAutoresizingMaskIntoConstraints = false
         button6.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button6.setTitle("Heavy", for: .normal)
-        button6.backgroundColor = UIColor.blue
         button6.tag = 6
         
         let button7 = UIButton()
+        button7.configuration = buttonConfig
         button7.translatesAutoresizingMaskIntoConstraints = false
         button7.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button7.setTitle("Rigid", for: .normal)
-        button7.backgroundColor = UIColor.blue
         button7.tag = 7
         
         let button8 = UIButton()
+        button8.configuration = buttonConfig
         button8.translatesAutoresizingMaskIntoConstraints = false
         button8.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button8.setTitle("Soft", for: .normal)
-        button8.backgroundColor = UIColor.blue
         button8.tag = 8
         
         let button9 = UIButton()
+        button9.configuration = buttonConfig
         button9.translatesAutoresizingMaskIntoConstraints = false
         button9.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         button9.setTitle("Selection", for: .normal)
-        button9.backgroundColor = UIColor.blue
         button9.tag = 9
         
         let stackView = UIStackView()
@@ -147,13 +151,11 @@ class ViewController: UIViewController {
             let generator = UISelectionFeedbackGenerator()
             generator.selectionChanged()
         default:
-e            let generator = UINotificationFeedbackGenerator()
+            let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.error)
         }
     }
 }
-
-
 
 final class Haptic {
 
